@@ -1,0 +1,6 @@
+[submodule "luci-app-LingTiGameAcc"]
+	path = luci-app-LingTiGameAcc
+	url = https://github.com/BCYDTZ/luci-app-LingTiGameAcc.git
+[submodule "luci-app-UUGameAcc"]
+	path = luci-app-UUGameAcc
+	url = https://github.com/BCYDTZ/luci-app-UUGameAcc.git
