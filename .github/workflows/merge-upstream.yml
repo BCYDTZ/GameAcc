@@ -46,7 +46,12 @@ jobs:
 
     - name: Apply commit changes
       run: |
-        git push origin master
+        git branch newbranch
+        git checkout newbranch
+        git add .
+        git commit -m "更新件"
+        git checkout master
+        git merge newbranch
     - name: Push Commits
       env:
         DOWNSTREAM_BRANCH: master
