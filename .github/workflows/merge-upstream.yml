@@ -47,5 +47,5 @@ jobs:
         git commit -m "更新软件"
         git checkout master
         git merge newbranch
-        git remote set-url origin git@github.com/BCYDTZ/GameAcc.git
+        git remote set-url origin git@github.com:BCYDTZ/GameAcc.git
         git push origin master
