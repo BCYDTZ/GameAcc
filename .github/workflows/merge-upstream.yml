@@ -36,7 +36,7 @@ jobs:
         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git config --global user.name "github-actions[bot]"
     - name: Install SSH Client #步骤3：关联ssh私钥
-      uses: webfactory/ssh-agent@v0.2.0 #这里调用这个第三方的库，可以直接关联ssh私钥
+      uses: actions/ssh-agent@v0.2.0 #这里调用这个第三方的库，可以直接关联ssh私钥
       with:
           ssh-private-key: ${{ secrets.ACCESS_TOKEN }} 
     - name: Load upstream commits
