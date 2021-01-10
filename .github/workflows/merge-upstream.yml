@@ -37,7 +37,7 @@ jobs:
         git config --global user.name "github-actions[bot]"
     - name: Setup SSH Private Key
         env:
-          token_Private_Keys: ${{ secrets.ACCESS_TOKEN }} 
+          ssh_Private_Keys: ${{ secrets.ACCESS_TOKEN }} 
     - name: Load upstream commits
       run: git clone --recursive https://github.com/BCYDTZ/GameAcc.git
     - name: update
