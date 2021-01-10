@@ -43,15 +43,6 @@ jobs:
         git submodule update --remote
         git add .
         git commit -m "更新件"
-
-    - name: Apply commit changes
-      run: |
-        git branch newbranch
-        git checkout newbranch
-        git add .
-        git commit -m "更新件"
-        git checkout master
-        git merge newbranch
     - name: Push Commits
       env:
         DOWNSTREAM_BRANCH: master
