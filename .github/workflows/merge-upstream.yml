@@ -39,12 +39,16 @@ jobs:
       run: git clone --recursive https://github.com/BCYDTZ/GameAcc.git
     - name: update
       run : |
+        cd GameAcc
         git submodule update --remote
+        git branch newbranch
+        git checkout newbranch
+        git add . 
+        git commit -m "更新件"
+        git checkout master
+        git merge newbranch
+        
     - name: Push Commits
       env:
         DOWNSTREAM_BRANCH: master
-      run : | 
-        cd GameAcc 
-        git add .
-        git commit -m "更新件"
-        git push origin master
+      run: git push -u origin master
