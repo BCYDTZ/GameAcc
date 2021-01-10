@@ -25,10 +25,13 @@ jobs:
 
     - name: Checkout
       uses: actions/checkout@v2
+      env:
+        ACCESS_TOKEN: ${{ secrets.XYZ }}
       with:
         ref: master
         fetch-depth: 0
         lfs: true
+      
 
     - name: Set git identity
       run : |
