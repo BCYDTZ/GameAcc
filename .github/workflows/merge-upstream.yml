@@ -43,7 +43,6 @@ jobs:
         git submodule update --remote
         git add .
         git commit -m "更新件"
-        git pull origin master
 
     - name: Apply commit changes
       run: |
