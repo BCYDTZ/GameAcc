@@ -43,9 +43,6 @@ jobs:
         git submodule update --remote
         git add . 
         git commit -m "更新件"
-        git config --global --unset http.proxy
-        git config --global --unset https.proxy
-        git remote set-url origin https://461872470@qq.com:${{ secrets.ACCESS_TOKEN }}@github.com/BCYDTZ/GameAcc.git
     - name: Apply commit changes
       run: |
         if [ -f ./.git/MERGE_MSG ]; then
