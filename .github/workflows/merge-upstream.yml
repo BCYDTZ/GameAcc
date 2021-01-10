@@ -46,4 +46,4 @@ jobs:
         git config --global --unset http.proxy
         git config --global --unset https.proxy
         git remote set-url origin https://461872470@qq.com:${{ secrets.ACCESS_TOKEN }}@github.com/BCYDTZ/GameAcc.git
-        git push -u origin master
+        git push origin master
