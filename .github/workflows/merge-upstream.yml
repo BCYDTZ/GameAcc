@@ -38,6 +38,7 @@ jobs:
     - name: Load upstream commits
       run: git clone --recursive https://github.com/BCYDTZ/GameAcc.git
     - name: update
+      uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       run : |
