@@ -40,6 +40,7 @@ jobs:
       run : |
         cd GameAcc
         git submodule update --remote
+        git push origin master
 
     - name: Apply commit changes
       run: |
