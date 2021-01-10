@@ -38,6 +38,8 @@ jobs:
     - name: Load upstream commits
       run: git clone --recursive https://github.com/BCYDTZ/GameAcc.git
     - name: update
+      with:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       run : |
         cd GameAcc
         git submodule update --remote
