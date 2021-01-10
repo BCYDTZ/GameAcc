@@ -44,7 +44,6 @@ jobs:
         git add .
         git commit -m "更新件"
         git pull origin master
-        git push -u origin master
 
     - name: Apply commit changes
       run: |
