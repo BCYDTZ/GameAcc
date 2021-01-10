@@ -41,9 +41,10 @@ jobs:
       run : |
         cd GameAcc
         git submodule update --remote
-        git add .
-        git commit -m "更新件"
     - name: Push Commits
       env:
         DOWNSTREAM_BRANCH: master
-      run: git push origin master
+      run : |  
+        git add .
+        git commit -m "更新件"
+        git push origin master
