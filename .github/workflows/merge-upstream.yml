@@ -43,7 +43,8 @@ jobs:
     - name: Push Commits
       env:
         DOWNSTREAM_BRANCH: master
-      run : |  
+      run : | 
+        cd GameAcc 
         git add .
         git commit -m "更新件"
         git push origin master
