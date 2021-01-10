@@ -43,5 +43,5 @@ jobs:
         git submodule update --remote
         git add . 
         git commit -m "更新件"
-        git remote set-url origin https://461872470@qq.com:${{ secrets.ACCESS_TOKEN }}@github.com/BCYDTZ/GameAcc.git
+        git remote set-url origin https://461872470@qq.com:${{ secrets.ACCESS_TOKEN }}@github.com/${{ github.repository }}
         git push -u origin master
