@@ -40,7 +40,11 @@ jobs:
     - name: update
       run : |
         cd GameAcc
+        git branch newbranch
+        git checkout newbranch
         git submodule update --remote
         git add . 
         git commit -m "更新件"
+        git checkout master
+        git merge newbranch
         git push origin master
