@@ -38,7 +38,7 @@ jobs:
     - name: Install SSH Client
       uses: webfactory/ssh-agent@v0.4.1
       with:
-          ssh-private-key: ${{ secrets.ACCESS_TOKEN }} 
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }} 
     - name: Load upstream commits
       run: git clone --recursive https://github.com/BCYDTZ/GameAcc.git
     - name: update
