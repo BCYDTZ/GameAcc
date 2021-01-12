@@ -40,16 +40,25 @@ jobs:
       with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }} 
     - name: Load upstream commits
-      run: git clone --recursive https://github.com/BCYDTZ/GameAcc.git
+      run : | 
+        git clone --recursive https://github.com/BCYDTZ/GameAcc.git
+        cd GameAcc
+        sh SyncCode.sh
     - name: update
       run : |
-        cd GameAcc
-        git branch newbranch
-        git checkout newbranch
-        git submodule update --remote
-        git add . 
-        git commit -m "更新软件"
-        git checkout master
-        git merge newbranch
+        if [ -f ./.git/MERGE_MSG ]; then
+        mkdir ./tmp && cp ./.git/MERGE_MSG ./tmp/message
+        sed -i "1c [bot] AutoMerging: merge all upstream's changes:" ./tmp/message
+        sed -i '/^\#.*/d' ./tmp/message
+        git commit --file="./tmp/message"
+        else
+        echo "There is no merge commits."
+        fi
+        
+    - name: Push Commits
+      env:
+        DOWNSTREAM_BRANCH: master
+      run : | 
+        git pull --rebase origin master
         git remote set-url origin git@github.com:BCYDTZ/GameAcc.git
-        git push origin master
+        git push origin $DOWNSTREAM_BRANCH
