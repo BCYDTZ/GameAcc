@@ -36,7 +36,7 @@ jobs:
         git config --global user.email "461872470@qq.com"
         git config --global user.name "BCYDTZ"
     - name: Install SSH Client
-      uses: webfactory/ssh-agent@v0.4.1
+      uses: webfactory/ssh-agent@v0.7.0
       with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }} 
     - name: Load upstream commits
