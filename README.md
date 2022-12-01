@@ -6,5 +6,5 @@ uu加速器
 src-git GameAcc https://github.com/BCYDTZ/GameAcc  
 2.执行以下代码：  
 ./scripts/feeds update -a  
-./scripts/feeds install -a
+./scripts/feeds install -A
 
